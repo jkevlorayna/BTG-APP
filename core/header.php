@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="">
 	<meta name="author" content="">
-	<title>Nergos Island Travel Guide Guide Administrator</title>
+	<title>Negros Island Travel Guide Guide Administrator</title>
 	<!-- Bootstrap core CSS -->
 
 	<link href="<?php echo $path; ?>css/bootstrap.css" rel="stylesheet">

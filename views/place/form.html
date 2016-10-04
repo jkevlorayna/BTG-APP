@@ -87,7 +87,7 @@
 						<label class="col-sm-3 control-label">Tags</label>
 						<div class="col-sm-9">
 								<ui-select multiple tagging tagging-label="(custom 'new' label)" ng-model="formData.Tags" theme="bootstrap" sortable="true"  title="Choose a color">
-									<ui-select-match placeholder="Select colors...">{{$item}}</ui-select-match>
+									<ui-select-match placeholder="Select tags...">{{$item}}</ui-select-match>
 									<ui-select-choices repeat="row in categoryListDataOnly | filter:$select.search">
 									{{row}}
 									</ui-select-choices>

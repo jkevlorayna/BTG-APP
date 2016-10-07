@@ -66,22 +66,22 @@ class PlaceRepository{
 			global $conn;
 
 			$id = (!isset($POST->Id)) ? 0 : $POST->Id;
-			$name = (!isset($POST->name)) ? 0 : $POST->name;
-			$address = (!isset($POST->address)) ? 0 : $POST->address;
-			$geoLocation = (!isset($POST->geoLocation)) ? 0 : $POST->geoLocation;
-			$description = (!isset($POST->description)) ? 0 : $POST->description;
+			$name = (!isset($POST->name)) ? '' : $POST->name;
+			$address = (!isset($POST->address)) ? '' : $POST->address;
+			$geoLocation = (!isset($POST->geoLocation)) ? '' : $POST->geoLocation;
+			$description = (!isset($POST->description)) ? '' : $POST->description;
 			$CategoryId = (!isset($POST->CategoryId)) ? 0 : $POST->CategoryId;
 			$contactInfo = (!isset($POST->contactInfo)) ? 0 : $POST->contactInfo;
 			$latitude = (!isset($POST->latitude)) ? 0 : $POST->latitude;
 			$longitude = (!isset($POST->longitude)) ? 0 : $POST->longitude;
 			$budget_from = (!isset($POST->budget_from)) ? 0 : $POST->budget_from;
 			$budget_to = (!isset($POST->budget_to)) ? 0 : $POST->budget_to;
-			$website_url = (!isset($POST->website_url)) ? 0 : $POST->website_url;
-			$Tags = (!isset($POST->Tags)) ? 0 : $POST->Tags;
+			$website_url = (!isset($POST->website_url)) ? '': $POST->website_url;
+			$Tags = (!isset($POST->Tags)) ? '' : $POST->Tags;
 
 
 			if($id == 0) { 
-				$query = $conn->prepare("INSERT INTO tbl_place (name,address,geoLocation,description,CategoryId,contactInfo,latitude,longitude,budget_from,budget_to,website_url) VALUES(?,?,?,?,?,?,?,?,?,?,?,?)");
+				$query = $conn->prepare("INSERT INTO tbl_place (name,address,geoLocation,description,CategoryId,contactInfo,latitude,longitude,budget_from,budget_to,website_url,Tags) VALUES(?,?,?,?,?,?,?,?,?,?,?,?)");
 				$query->execute(array($name,$address,$geoLocation,$description,$CategoryId,$contactInfo,$latitude,$longitude,$budget_from,$budget_to,$website_url,$Tags));
 				$id = $conn->lastInsertId(); 
 			    mkdir("uploads/".$id,0777,true);

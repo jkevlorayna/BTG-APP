@@ -102,8 +102,9 @@ $scope.Id = $stateParams.Id
 	$scope.getById = function () {
 		svcPlace.getById($scope.Id).then(function (r) {
 				$scope.formData =  r;
-				$scope.formData.Tags = r.Tags.split(',');
-				console.log($scope.formData.Tags);
+				if($scope.formData.Tags != null){
+					$scope.formData.Tags = r.Tags.split(',');
+				}
         });
     }
 	
@@ -112,11 +113,13 @@ $scope.Id = $stateParams.Id
 	$scope.pageTitle = $scope.Id == 0 ? 'Add Place'  : 'Update Place' ;
 	
 	$scope.save = function () {
-
+			if($scope.formData.Tags != undefined){
 				$scope.formData.Tags =  $scope.formData.Tags.map(function(obj){return obj;}).join(', '); // returns the expected output.; 
+			}	
 		svcPlace.save($scope.formData).then(function (r) {
-				$scope.formData.Tags = $scope.formData.Tags.split(',');
-				
+				if($scope.formData.Tags != undefined){
+					$scope.formData.Tags = $scope.formData.Tags.split(',');
+				}
 				growl.success("Data Successfully Save");
 		
 			if($scope.Id == 0){ $location.path('/place/form/'+r); }

@@ -41,7 +41,7 @@ class UserRepository{
 			
 			if($id == 0){
 				$query = $conn->prepare("INSERT INTO tbl_user (name,username,password,UserTypeId,status) VALUES(?,?,?,?,?)");
-				$query->execute(array($name,$username,$password,$UserTypeId));	
+				$query->execute(array($name,$username,$password,$UserTypeId,$status));	
 			}else{
 				$query = $conn->prepare("UPDATE tbl_user SET name = ?  , username = ? , password = ? , UserTypeId = ? , status = ?  WHERE user_id = ? ");
 				$query->execute(array($name,$username,$password,$UserTypeId,$status,$id));	

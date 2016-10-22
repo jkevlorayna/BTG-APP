@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 04, 2016 at 11:32 PM
+-- Generation Time: Oct 22, 2016 at 08:33 PM
 -- Server version: 5.6.16
 -- PHP Version: 5.5.11
 
@@ -31,7 +31,7 @@ CREATE TABLE IF NOT EXISTS `tbl_category` (
   `category_name` varchar(100) NOT NULL,
   `category_desc` varchar(100) NOT NULL,
   `show_mobile` tinyint(1) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tbl_category`
@@ -41,7 +41,14 @@ INSERT INTO `tbl_category` (`Id`, `category_name`, `category_desc`, `show_mobile
 (24, 'Hotels', 'List of Hotels in Bacolod City', 1),
 (25, 'Resorts', 'List of Resorts in Bacolod City', 1),
 (27, 'Restaurant', 'List of Restuarant in Bacolod City', 1),
-(28, 'Attraction', 'List Attraction of Transaction', 0);
+(28, 'Attraction', 'List Attraction of Transaction', 0),
+(29, 'das', 'dasd', 0),
+(30, 'das', 'dasd', 0),
+(31, 'test', 'asd', 0),
+(32, 'tedsad', 'adsd', 0),
+(33, 'testa', 'asd', 0),
+(34, 'teasd', 'teasd', 0),
+(35, '232', 'asd', 0);
 
 -- --------------------------------------------------------
 
@@ -136,14 +143,15 @@ CREATE TABLE IF NOT EXISTS `tbl_news` (
   `content` text NOT NULL,
   `date_added` date NOT NULL,
   `news_date` date NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tbl_news`
 --
 
 INSERT INTO `tbl_news` (`Id`, `title`, `content`, `date_added`, `news_date`) VALUES
-(1, 'Example News 1', '', '2016-08-20', '2016-08-19');
+(1, 'Example News 1', '', '2016-10-14', '2016-08-19'),
+(3, 'das', '', '2016-10-14', '2016-10-14');
 
 -- --------------------------------------------------------
 
@@ -196,27 +204,27 @@ CREATE TABLE IF NOT EXISTS `tbl_place` (
   `budget_to` decimal(12,2) NOT NULL,
   `website_url` varchar(250) NOT NULL,
   `Tags` varchar(300) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tbl_place`
 --
 
 INSERT INTO `tbl_place` (`Id`, `name`, `address`, `geoLocation`, `description`, `CategoryId`, `contactInfo`, `latitude`, `longitude`, `icon`, `shortDescription`, `googleMapPlaceId`, `budget_from`, `budget_to`, `website_url`, `Tags`) VALUES
-(1, 'L Fisher Hotel', '14th Lacson Street, Downtown, Bacolod, 6100 Negros Occidental', 'dasd', '<p><span style="background-color:#ffffff; color:#222222; font-family:arial,sans-serif; font-size:13px">This relaxed hotel, set in downtown Bacolod City, lies an 8-minute walk from Capitol Park and Lagoon, a 10-minute walk from the Negros Museum and 2 km from <strong>Bacolod Public Plaza.</strong></span><strong><span style="background-color:#ffffff; color:#222222; font-family:arial,sans-serif; font-size:13px">&nbsp;</span></strong><br />\n<br />\n<span style="background-color:#ffffff; color:#222222; font-family:arial,sans-serif; font-size:13px">The laid-back rooms and suites come with cable TV, free Wi-Fi and minifridges, plus safes. Suites provide sitting or living areas; some upgraded suites feature 4-poster beds.<br />\n<br />\nThe hotel has an informal coffee shop and 3 restaurants, including a Japanese grill and a 24-hour international eatery. There&#39;s also a gym, a rooftop pool, a spa and meeting facilities.</span></p>\n', 24, '', '10.679819', '122.954391', 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRQBPFDTHWREegjZ9ARYxdCj6ySmIA2zxgTGun3mpLjQvAJBRCmzAc8lg', '', 'ChIJ-SDvEKjRrjMRTtueCDt4qmI', '1000.00', '3000.00', 'http://localhost/btgApp-Admin/#/place/form/1', 'Hotels, Restaurant'),
-(2, 'The Sugar Land Hotel', 'Araneta Ave, Bacolod, Negros Occidental', 'test', '<p>0</p>\n', 24, '', '10.652446', '122.937551', '', '', '', '0.00', '0.00', '', NULL),
-(3, 'Luxur Place', 'Magsaysay Street', '0', '<p>0</p>\n', 24, '', '10.653021', '122.942964', '', '', '', '0.00', '0.00', '', NULL),
-(4, 'Palmas Delmar', 'PALMAS DEL MAR BACOLOD J.R. Torres Avenue Bacolod City 6100 Negros Occidental, Philippines', '0', '<p>Palmas del Mar Bacolod is a five-acre resort right at the<br />\nedge of the sea. Set facing the majestic sunset are<br />\namenities for everyone in the family to enjoy.&nbsp;<br />\nThere are three swimming pools to choose from.&nbsp;<br />\na five-lane lapping pool...a free-form island pool.<br />\na Mediterranean-design pool. Kids also get their&nbsp;<br />\nshare of the splash with 2 kiddie pools.<br />\n<br />\nVisitors can relax in either of our two Jacuzzis.<br />\nfor intimate or large groups. More fun activities&nbsp;<br />\nabound within the resort. Visitors can go boating.<br />\nfishing. billiards.and table tennis.<br />\n<br />\nFor the fitness buff, there&#39;s a jogging path and an<br />\nexercise gym. For restaurant dining and room service,<br />\nour restaurant and friendly food service personnel&nbsp;<br />\noffers you a selection of international favorites and&nbsp;<br />\nthe island&#39;s specialties.<br />\n<br />\nAnd while we keep you away from the rest of the world,<br />\nvisitors can keep in touch with our wireless internet service.<br />\n<br />\nAll these make Palmas del Mar Bacolod one of the best&nbsp;<br />\nresort in the Philippines.</p>\n', 25, '<p>Email Address:<br />For hotel accommodation and other information:<br /><strong>info@palmasdelmarresort.net</strong><br />For weddings, conferences, and banquets:&nbsp;<br /><strong><a href="mailto:sales@palmasdelmarresort.net">sales@palmasdelmarresort.net</a></strong><br /><br /><br />Website: www.palmasdelmarresort.net<br /><br />Telephone:<br />+6334-434-8987 (Direct Line to Sales)<br />+6334-434-7971 to 72<br />+6334-433-3587 to 88<br />&nbsp;</p>', '10.644006', '122.924394', '', '', '', '0.00', '0.00', '', NULL),
+(1, 'L Fisher Hotel', '14th Lacson Street, Downtown, Bacolod, 6100 Negros Occidental', 'dasd', '<p><span style="background-color:#ffffff; color:#222222; font-family:arial,sans-serif; font-size:13px">This relaxed hotel, set in downtown Bacolod City, lies an 8-minute walk from Capitol Park and Lagoon, a 10-minute walk from the Negros Museum and 2 km from <strong>Bacolod Public Plaza.</strong></span><strong><span style="background-color:#ffffff; color:#222222; font-family:arial,sans-serif; font-size:13px">&nbsp;</span></strong><br />\n<br />\n<span style="background-color:#ffffff; color:#222222; font-family:arial,sans-serif; font-size:13px">The laid-back rooms and suites come with cable TV, free Wi-Fi and minifridges, plus safes. Suites provide sitting or living areas; some upgraded suites feature 4-poster beds.<br />\n<br />\nThe hotel has an informal coffee shop and 3 restaurants, including a Japanese grill and a 24-hour international eatery. There&#39;s also a gym, a rooftop pool, a spa and meeting facilities.</span></p>\n', 27, '', '10.679819', '122.954391', 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRQBPFDTHWREegjZ9ARYxdCj6ySmIA2zxgTGun3mpLjQvAJBRCmzAc8lg', '', 'ChIJ-SDvEKjRrjMRTtueCDt4qmI', '1000.00', '3000.00', 'http://localhost/btgApp-Admin/#/place/form/1', 'Hotels'),
+(2, 'The Sugar Land Hotel', 'Araneta Ave, Bacolod, Negros Occidental', 'test', '<p>0</p>\n', 27, '', '10.652446', '122.937551', '', '', '', '0.00', '0.00', '', ''),
+(3, 'Luxur Place', 'Magsaysay Street', '0', '<p>0</p>\n', 27, '', '10.653021', '122.942964', '', '', '', '0.00', '0.00', '', ''),
+(4, 'Palmas Delmar', 'PALMAS DEL MAR BACOLOD J.R. Torres Avenue Bacolod City 6100 Negros Occidental, Philippines', '0', '<p>Palmas del Mar Bacolod is a five-acre resort right at the<br />\nedge of the sea. Set facing the majestic sunset are<br />\namenities for everyone in the family to enjoy.&nbsp;<br />\nThere are three swimming pools to choose from.&nbsp;<br />\na five-lane lapping pool...a free-form island pool.<br />\na Mediterranean-design pool. Kids also get their&nbsp;<br />\nshare of the splash with 2 kiddie pools.<br />\n<br />\nVisitors can relax in either of our two Jacuzzis.<br />\nfor intimate or large groups. More fun activities&nbsp;<br />\nabound within the resort. Visitors can go boating.<br />\nfishing. billiards.and table tennis.<br />\n<br />\nFor the fitness buff, there&#39;s a jogging path and an<br />\nexercise gym. For restaurant dining and room service,<br />\nour restaurant and friendly food service personnel&nbsp;<br />\noffers you a selection of international favorites and&nbsp;<br />\nthe island&#39;s specialties.<br />\n<br />\nAnd while we keep you away from the rest of the world,<br />\nvisitors can keep in touch with our wireless internet service.<br />\n<br />\nAll these make Palmas del Mar Bacolod one of the best&nbsp;<br />\nresort in the Philippines.</p>\n', 27, '<p>Email Address:<br />For hotel accommodation and other information:<br /><strong>info@palmasdelmarresort.net</strong><br />For weddings, conferences, and banquets:&nbsp;<br /><strong><a href="mailto:sales@palmasdelmarresort.net">sales@palmasdelmarresort.net</a></strong><br /><br /><br />Website: www.palmasdelmarresort.net<br /><br />Telephone:<br />+6334-434-8987 (Direct Line to Sales)<br />+6334-434-7971 to 72<br />+6334-433-3587 to 88<br />&nbsp;</p>', '10.644006', '122.924394', '', '', '', '0.00', '0.00', '', ''),
 (5, 'Chicken House', 'Lacson St, Bacolod City, Negros Occidental', '0', '<p>The scrumptious taste&nbsp;of chicken inasal served by Bacolod Chicken House is not only because of the&nbsp;exact ingredients and secret spices but it takes the work of passion and&nbsp;dedication to prepare a perfect masterpiece.</p>\n', 27, '<p>434 9405</p>\n', '10.685385', '122.957015', '', '', '', '0.00', '0.00', '', NULL),
 (8, '21 Restaurant', '21 Street. cor Lacson St., Bacolod City, Negros Occidental', '0', '<p>21 Restaurant is definitely a place to&nbsp;visit in Bacolod, not just for good food, but for an ultimate fine dining experience you&#39;ll keep coming back.</p>\n', 27, '<p>433 4096</p>\n', '10.683033', '122.955749', '', '', '', '0.00', '0.00', '', NULL),
 (9, 'Sandok Comfort Food', 'Narra Ave., Bacolod City, Negros Occidental', '0', '<p>Sandok is a nice place to dine.&nbsp;The inside of Sandok is very cozy and well-lit. &nbsp;The interior is a quite surprising change from the outside! Everything looks clean and enticing. &nbsp;The downstairs area is tiny but it is comfortable and charming.</p>\n', 27, '<p>703 2513</p>\n', '10.673328', '122.958652', '', '', '', '0.00', '0.00', '', NULL),
 (10, 'Bob''s Cafe', 'B.S Aquino Drive, Bacolod City, Negros Occidental', '0', '<p>Bob&#39;s has a&nbsp;delicious cruisine here in Bacolod</p>\n', 27, '<p>434 2409</p>\n', '10.682724', '122.957365', '', '', '', '0.00', '0.00', '', NULL),
-(11, 'Mambukal Mountain Resort', 'Brgy. Minoyan, Murcia, Negros Occidental', '0', '<p>The resort is operated by the Provincial Government of Negros Occidental. It boasts of a number of waterfalls and sulfur springs, and blessed with beautiful natural features which spread over 23.6 hectares.</p>\n', 25, '<p>(034) 473-0610 or their booking office at (034) 433-8516.</p>\n', '10.514434', '123.104972', '', '', '', '0.00', '0.00', '', NULL),
+(11, 'Mambukal Mountain Resort', 'Brgy. Minoyan, Murcia, Negros Occidental', '0', '<p>The resort is operated by the Provincial Government of Negros Occidental. It boasts of a number of waterfalls and sulfur springs, and blessed with beautiful natural features which spread over 23.6 hectares.</p>\n', 27, '<p>(034) 473-0610 or their booking office at (034) 433-8516.</p>\n', '10.514434', '123.104972', '', '', '', '0.00', '0.00', '', ''),
 (12, 'Apollo Restaurant', 'Hilado - Malaspina St., Bacolod City, Negros Occidental', '0', '<p>Apollo is the best</p>\n', 27, '<p>433 4850</p>\n', '10.670897', '122.956329', '', '', '', '0.00', '0.00', '', NULL),
-(13, 'Sta. Fe Resort', 'Brgy. Granada, Bacolod City, Negros Occidental', '0', '<p>Established in 1940s, Sta. Fe Resort &amp; Convention is the first privately owned resort in Bacolod City.It is open daily at 6:00am-9:00pm.</p>\n', 25, '<p>&nbsp;For overnight stays or inquiriecontact (034) 434-1456 / 432-1073.</p>', '10.662188', '123.004253', '', '', '', '0.00', '0.00', '', NULL),
-(14, 'Campuestohan Highland Resort', 'Brgy. Cabatangan, Talisay, Negros Occidental', '0', '<p>Campuestohan Highland Resort, aside from being truly the perfect getaway for those who enjoy the cool atmosphere of nature, is also a gourmet haven for food connoisseurs.<br />\nOne of the resorts greatest assets is the owners themselves who enjoy cooking and serving delicious food specialties to friends and associates.<br />\nThis is why it is not surprising if the dishes served at Campuestohan Highland Resort are truly exceptional in taste and quality.<br />\nYou can choose from among the many variety of dishes that the resort restaurant offers, from the truly flavorsome &quot;Fried Cansi&quot; to the mouthwatering and extremely popular Ilonggo dish called KBL or &quot;Kadyos-Baboy-Langka.&quot;</p>\n', 25, '<p>&nbsp;if you wish to go on an overnight stay. Contact the resort at (034) 702-0964, (+63) 915-211-1406 / 0917-300-5007 / 0925-600-8088.</p>\n', '10.660712', '123.143981', '', '', '', '0.00', '0.00', '', NULL),
-(15, 'The Water Garden, Forest Park', 'St. Francis Village, Brgy. Taculing, Bacolod City, Negros Occidental.', '0', '<p>The Water Garden is the ultimate destination for the whole family, be it a weekday or a weekend.&nbsp;<strong><em>Unwind</em></strong>. Having one of the widest&nbsp;<strong>POOLS</strong>&nbsp;in Western Visayas, guests especially kids will enjoy the 4-5 foot deep water. Dance around the&nbsp;<strong>PLAY FOUNTAIN</strong>&nbsp;and enjoy in the&nbsp;<strong>LAZY RIVER</strong>, which has a current pushing you around the bend. Take a rest on the&nbsp;<strong>COTTAGES</strong>,&nbsp;<strong>TABLES, and SWINGING BENCHES AND REST CHAIRS</strong>&nbsp;surrounding the pool area too. You can also stay the night or even longer from the&nbsp;<strong>9 ROOMS AND 7 VILLAS</strong>&nbsp;available for your accommodation.&nbsp; Find more leisure after swimming with our forest guardians in the&nbsp;<strong>MINI ZOO&nbsp;</strong>and<strong>&nbsp;AVIARY</strong>, a fun display located just beside our&nbsp;<strong>PLAYGROUND</strong>.&nbsp;<strong><em>Dine</em></strong>. Appetite is not a problem here because the<strong>FOOD COURT</strong>&nbsp;will cater to all the desires of your stomach. Served well and warm by the chef, we have various specialties in the menu. And we won&rsquo;t leave you thirsty with the refreshing drinks we have available. Of course with the chef on the house, we can assist you with the best&nbsp;<strong>CATERING</strong>&nbsp;services you need.&nbsp;<strong><em>Celebrate</em></strong>. Make us your venue for your special occasions and functions. Surrounded by the Lazy River, 3&nbsp;<strong>MINI GAZEBO</strong>&rsquo;s can cater to 40-70 persons &ndash; one of which could be availed with air-condition. Hold a wedding ceremony at the&nbsp;<strong>WISHING WELL&nbsp;</strong>garden, where the best ambience and often the best sunset could be captured on your moment. You may also gather conventions or sessions on our divided&nbsp;<strong>FUNCTION ROOMS</strong>&nbsp;located inside the restaurant.&nbsp; More visitors? Then we have two best options for you.&nbsp;<strong>LALAINE HALL&nbsp;</strong>is an air-conditioned room that fits a maximum of 200 visitors. Complete with a built PA system as well but non-air-conditioned is&nbsp;<strong>THE GRAND GAZEBO</strong>&nbsp;that can accommodate up to 800 persons and in it is an air-conditioned VIP lounge. &nbsp;And for all other events you wish to have, we have special&nbsp;<strong>PACKAGES</strong>&nbsp;just for you &ndash; Baptismal, Wedding, Debut, Prom, Kids Party, Educational Tour, Corporate, Seminars/ Conference, etc. To make things better and more convenient for you our place have Wireless Internet Access, audiovisual equipment, boardroom facilities, carpool services and other facilities for gatherings.</p>\n', 25, '<p>For inquiries, contact (034) 433-3114.</p>\n', '10.644315', '122.953510', '', '', '', '0.00', '0.00', '', NULL),
-(16, 'Natureâ€™s Village Resort', 'Talisay Highway, Talisay City, Metro Bacolod, 6115 Negros Occidental', '0', '<p>Nature&rsquo;s Village Resort is a garden paradise located in Talisay City, only 3.5 kilometers from Bacolod City. It offers unique accommodations where nature lovers can bask in the unspoiled beauty while remaining close to the city.</p>\n', 25, '<p>For inquiries or reservations, contact (034) 495-0808 / 495-3368 to 69 or (+63) 922-851-2231 / 0917-300-7576.</p>\n', '10.726159', '122.964461', '', '', '', '0.00', '0.00', '', NULL),
+(13, 'Sta. Fe Resort', 'Brgy. Granada, Bacolod City, Negros Occidental', '0', '<p>Established in 1940s, Sta. Fe Resort &amp; Convention is the first privately owned resort in Bacolod City.It is open daily at 6:00am-9:00pm.</p>\n', 27, '<p>&nbsp;For overnight stays or inquiriecontact (034) 434-1456 / 432-1073.</p>', '10.662188', '123.004253', '', '', '', '0.00', '0.00', '', ''),
+(14, 'Campuestohan Highland Resort', 'Brgy. Cabatangan, Talisay, Negros Occidental', '0', '<p>Campuestohan Highland Resort, aside from being truly the perfect getaway for those who enjoy the cool atmosphere of nature, is also a gourmet haven for food connoisseurs.<br />\nOne of the resorts greatest assets is the owners themselves who enjoy cooking and serving delicious food specialties to friends and associates.<br />\nThis is why it is not surprising if the dishes served at Campuestohan Highland Resort are truly exceptional in taste and quality.<br />\nYou can choose from among the many variety of dishes that the resort restaurant offers, from the truly flavorsome &quot;Fried Cansi&quot; to the mouthwatering and extremely popular Ilonggo dish called KBL or &quot;Kadyos-Baboy-Langka.&quot;</p>\n', 27, '<p>&nbsp;if you wish to go on an overnight stay. Contact the resort at (034) 702-0964, (+63) 915-211-1406 / 0917-300-5007 / 0925-600-8088.</p>\n', '10.660712', '123.143981', '', '', '', '0.00', '0.00', '', ''),
+(15, 'The Water Garden, Forest Park', 'St. Francis Village, Brgy. Taculing, Bacolod City, Negros Occidental.', '0', '<p>The Water Garden is the ultimate destination for the whole family, be it a weekday or a weekend.&nbsp;<strong><em>Unwind</em></strong>. Having one of the widest&nbsp;<strong>POOLS</strong>&nbsp;in Western Visayas, guests especially kids will enjoy the 4-5 foot deep water. Dance around the&nbsp;<strong>PLAY FOUNTAIN</strong>&nbsp;and enjoy in the&nbsp;<strong>LAZY RIVER</strong>, which has a current pushing you around the bend. Take a rest on the&nbsp;<strong>COTTAGES</strong>,&nbsp;<strong>TABLES, and SWINGING BENCHES AND REST CHAIRS</strong>&nbsp;surrounding the pool area too. You can also stay the night or even longer from the&nbsp;<strong>9 ROOMS AND 7 VILLAS</strong>&nbsp;available for your accommodation.&nbsp; Find more leisure after swimming with our forest guardians in the&nbsp;<strong>MINI ZOO&nbsp;</strong>and<strong>&nbsp;AVIARY</strong>, a fun display located just beside our&nbsp;<strong>PLAYGROUND</strong>.&nbsp;<strong><em>Dine</em></strong>. Appetite is not a problem here because the<strong>FOOD COURT</strong>&nbsp;will cater to all the desires of your stomach. Served well and warm by the chef, we have various specialties in the menu. And we won&rsquo;t leave you thirsty with the refreshing drinks we have available. Of course with the chef on the house, we can assist you with the best&nbsp;<strong>CATERING</strong>&nbsp;services you need.&nbsp;<strong><em>Celebrate</em></strong>. Make us your venue for your special occasions and functions. Surrounded by the Lazy River, 3&nbsp;<strong>MINI GAZEBO</strong>&rsquo;s can cater to 40-70 persons &ndash; one of which could be availed with air-condition. Hold a wedding ceremony at the&nbsp;<strong>WISHING WELL&nbsp;</strong>garden, where the best ambience and often the best sunset could be captured on your moment. You may also gather conventions or sessions on our divided&nbsp;<strong>FUNCTION ROOMS</strong>&nbsp;located inside the restaurant.&nbsp; More visitors? Then we have two best options for you.&nbsp;<strong>LALAINE HALL&nbsp;</strong>is an air-conditioned room that fits a maximum of 200 visitors. Complete with a built PA system as well but non-air-conditioned is&nbsp;<strong>THE GRAND GAZEBO</strong>&nbsp;that can accommodate up to 800 persons and in it is an air-conditioned VIP lounge. &nbsp;And for all other events you wish to have, we have special&nbsp;<strong>PACKAGES</strong>&nbsp;just for you &ndash; Baptismal, Wedding, Debut, Prom, Kids Party, Educational Tour, Corporate, Seminars/ Conference, etc. To make things better and more convenient for you our place have Wireless Internet Access, audiovisual equipment, boardroom facilities, carpool services and other facilities for gatherings.</p>\n', 27, '<p>For inquiries, contact (034) 433-3114.</p>\n', '10.644315', '122.953510', '', '', '', '0.00', '0.00', '', ''),
+(16, 'Natureâ€™s Village Resort', 'Talisay Highway, Talisay City, Metro Bacolod, 6115 Negros Occidental', '0', '<p>Nature&rsquo;s Village Resort is a garden paradise located in Talisay City, only 3.5 kilometers from Bacolod City. It offers unique accommodations where nature lovers can bask in the unspoiled beauty while remaining close to the city.</p>\n', 27, '<p>For inquiries or reservations, contact (034) 495-0808 / 495-3368 to 69 or (+63) 922-851-2231 / 0917-300-7576.</p>\n', '10.726159', '122.964461', '', '', '', '0.00', '0.00', '', ''),
 (17, 'Imay''s Bar and Restaurant', '6th St., Bacolod City, Negros Occidental', '0', '<p>Imay&#39;s bar and restaurant has a nice foods and very accommodating people.</p>\n', 27, '<p>434 5113</p>\n', '10.674747', '122.954541', '', '', '', '0.00', '0.00', '', NULL),
 (18, 'L''Kaisei', '10th St. cor Lacson St. Bacolod City, Negros Occidental', '0', '<p>L&#39; Kaisei Lacson, you&#39;ll find a much larger menu full of various Japanese foods including steaks, tofu, more sushi and sushimi choices, soups, and even wine. However, the food is not served with unlimited rice and is more expensive.</p>\n', 27, '<p>433 5599</p>\n', '10.677906', '122.954294', '', '', '', '0.00', '0.00', '', NULL),
 (19, 'Kristin''s Steakhouse', '20th St., Bacolod City, Negros Occidental', '0', '<p>Kristin&rsquo;s is a great place to go to for the adventurous and for those who want a really good steak.&nbsp;</p>\n', 27, '<p>435 1979</p>\n', '10.68284', '122.9552', '', '', '', '0.00', '0.00', '', NULL),
@@ -224,7 +232,9 @@ INSERT INTO `tbl_place` (`Id`, `name`, `address`, `geoLocation`, `description`, 
 (21, 'Avenue Suites', 'Corner 12th Lacson Street, Bacolod City, Negros Occidental 6100', '0', '<p>Avenue Suites is situated in a walking distance parameter to major banks, popular restaurants, 24-hour convenience stores, 24-hour drug stores, pastry shops, amusement spots.&nbsp;</p>\n', 24, '<p>435 7777</p>\n', '10.678070', '122.954030', '', '', '', '0.00', '0.00', '', NULL),
 (22, 'O Hotel', 'San Sebastian St, Bacolod, Negros Occidental', '0', '<p>Warm, casual rooms feature cable TV and Wi-Fi, plus minifridges and desks. Suites add sitting areas, kitchenettes and pull-out sofas. An upgraded suite adds a Jacuzzi.<br /><br />The hotel serves a free breakfast buffet. There&rsquo;s also a bright modern restaurant with a bar</p>', 24, '<p>&nbsp;433 7401</p>\n', '10.664629', '122.947593', '', '', '', '0.00', '0.00', '', NULL),
 (23, 'East View Hotel', 'Carlos Hilado Circumferential Road corner Esperanza Diola St. Circumferential Road, Bacolod, 6100 Negros Occidental', '0', '<p>Streamlined rooms with warm tones offer free Internet access, satellite TV, minifridges and safes, as well sitting areas. Upgraded rooms add extra beds, and some feature living areas with sofas. Room service is available.<br />\n<br />\nA stylish restaurant/bar with outdoor dining serves cocktails, grill-style and international cuisine, and a bar/nightclub has regular DJs</p>\n', 24, '<p>433 0596</p>\n', '10.665086', '122.968235', '', '', '', '0.00', '0.00', '', NULL),
-(24, 'Grand Regal Hotel', 'Araneta Ave, Bacolod, 6100 Negros Occidental', '0', '', 24, '<p>432 0888</p>\n', '10.658327', '122.941123', '', '', '', '0.00', '0.00', '', NULL);
+(24, 'Grand Regal Hotel', 'Araneta Ave, Bacolod, 6100 Negros Occidental', '0', '', 24, '<p>432 0888</p>\n', '10.658327', '122.941123', '', '', '', '0.00', '0.00', '', 'Resorts'),
+(25, 'dasd', '0', '0', '0', 25, '0', '0', '0', '', '', '', '0.00', '0.00', '0', ''),
+(26, 'dasd', '', '', '', 24, '0', '0', '0', '', '', '', '0.00', '0.00', '', '');
 
 -- --------------------------------------------------------
 
@@ -237,7 +247,7 @@ CREATE TABLE IF NOT EXISTS `tbl_place_tab` (
   `name` varchar(100) NOT NULL,
   `PlaceId` int(11) NOT NULL,
   `content` text NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=61 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=65 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tbl_place_tab`
@@ -286,7 +296,11 @@ INSERT INTO `tbl_place_tab` (`Id`, `name`, `PlaceId`, `content`) VALUES
 (57, 'Description', 23, '<p>Streamlined rooms with warm tones offer free Internet access, satellite TV, minifridges and safes, as well sitting areas. Upgraded rooms add extra beds, and some feature living areas with sofas. Room service is available.<br />\n<br />\nA stylish restaurant/bar with outdoor dining serves cocktails, grill-style and international cuisine, and a bar/nightclub has regular DJs</p>\n'),
 (58, 'Contact Information', 23, '<p>433 0596</p>\n'),
 (59, 'Description', 24, ''),
-(60, 'Contact Information', 24, '<p>432 0888</p>\n');
+(60, 'Contact Information', 24, '<p>432 0888</p>\n'),
+(61, 'Description', 25, ''),
+(62, 'Contact Information', 25, ''),
+(63, 'Description', 26, ''),
+(64, 'Contact Information', 26, '');
 
 -- --------------------------------------------------------
 
@@ -367,14 +381,15 @@ CREATE TABLE IF NOT EXISTS `tbl_user` (
   `password` varchar(100) NOT NULL,
   `UserTypeId` int(11) NOT NULL,
   `status` varchar(50) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tbl_user`
 --
 
 INSERT INTO `tbl_user` (`user_id`, `name`, `username`, `password`, `UserTypeId`, `status`) VALUES
-(4, 'Administrator', 'admin', 'admin', 0, 'Active');
+(4, 'Administrator', 'admin', 'admin', 0, 'Active'),
+(5, 'asd', 'test', 'test', 3, 'Active');
 
 -- --------------------------------------------------------
 
@@ -548,7 +563,7 @@ ALTER TABLE `tbl_user_type`
 -- AUTO_INCREMENT for table `tbl_category`
 --
 ALTER TABLE `tbl_category`
-MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=29;
+MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=36;
 --
 -- AUTO_INCREMENT for table `tbl_default_tab`
 --
@@ -573,7 +588,7 @@ MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 -- AUTO_INCREMENT for table `tbl_news`
 --
 ALTER TABLE `tbl_news`
-MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `tbl_pages`
 --
@@ -583,12 +598,12 @@ MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 -- AUTO_INCREMENT for table `tbl_place`
 --
 ALTER TABLE `tbl_place`
-MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=25;
+MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=27;
 --
 -- AUTO_INCREMENT for table `tbl_place_tab`
 --
 ALTER TABLE `tbl_place_tab`
-MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=61;
+MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=65;
 --
 -- AUTO_INCREMENT for table `tbl_review`
 --
@@ -608,7 +623,7 @@ MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 -- AUTO_INCREMENT for table `tbl_user`
 --
 ALTER TABLE `tbl_user`
-MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `tbl_user_rating`
 --

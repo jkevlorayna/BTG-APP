@@ -19,7 +19,7 @@ app.controller('AppEventController', function ($rootScope,$scope, $http, $q, $lo
 	$scope.openDeleteModal = function (size,id) {
 			var modal = $uibModal.open({
 			templateUrl: 'views/deletemodal/deleteModal.html',
-			controller: 'AppYearModalController',
+			controller: 'AppEventModalController',
 			size: size,
 			resolve: {
 				dataId: function () {

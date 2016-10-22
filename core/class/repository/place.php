@@ -36,11 +36,17 @@ class PlaceRepository{
 		public function Search($searchText,$pageNo,$pageSize){
 			global $conn;
 			$pageNo = ($pageNo - 1) * $pageSize; 
+			$where = "";
+
+			$where .= "AND (name LIKE '%$searchText%' OR category_name LIKE '%$searchText%' OR Tags LIKE '%$searchText%')";
+			
 			$limitCondition = $pageNo == 0 && $pageSize == 0 ? '' : 'LIMIT '.$pageNo.','.$pageSize;
 			$query = $conn->query("SELECT *,tbl_place.Id As Id FROM  tbl_place
 			LEFT JOIN tbl_category ON tbl_category.Id = tbl_place.CategoryId
-			WHERE name LIKE '%$searchText%' OR category_name LIKE '%$searchText%' OR Tags LIKE '%$searchText%'   $limitCondition ");
-			$count = $searchText != '' ? $query->rowcount() : $conn->query("SELECT * FROM  tbl_place")->rowcount() ;
+			WHERE 1 = 1 $where   $limitCondition ");
+			$count =  $conn->query("SELECT * FROM  tbl_place
+	LEFT JOIN tbl_category ON tbl_category.Id = tbl_place.CategoryId
+			WHERE 1 = 1 $where")->rowcount() ;
 
 			$data = array();
 			$data['Results'] = $query->fetchAll(PDO::FETCH_ASSOC);

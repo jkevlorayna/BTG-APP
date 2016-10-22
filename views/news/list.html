@@ -4,7 +4,7 @@
 								<div class="pull-right"> 
 									<a href="#/news/form/0"  class="btn btn-info"><i class="fa fa-plus-circle"></i> add</a>
 								</div>
-											<h3>News List</h3>
+											<h3>Festival List</h3>
 						</div>
 <div class="row">
 
@@ -38,7 +38,7 @@
 						<td>
 							<a href="#/news/form/{{row.Id}}"  class="btn btn-success btn-sm"> <i class="fa fa-edit"></i> </a>
 
-							<a href="javascript:void(0)" ng-click="openArchiveModal('md',row.Id,'list')"  class="btn btn-danger btn-sm"> <i class="fa fa-trash-o"></i> </a>
+							<a href="javascript:void(0)" ng-click="openDeleteModal('md',row.Id)"  class="btn btn-danger btn-sm"> <i class="fa fa-trash-o"></i> </a>
 							
 						</td>
 					</tr>

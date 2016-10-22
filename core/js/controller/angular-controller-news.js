@@ -19,7 +19,7 @@ app.controller('AppNewsController', function ($rootScope,$scope, $http, $q, $loc
 	$scope.openDeleteModal = function (size,id) {
 			var modal = $uibModal.open({
 			templateUrl: 'views/deletemodal/deleteModal.html',
-			controller: 'AppYearModalController',
+			controller: 'AppNewsModalController',
 			size: size,
 			resolve: {
 				dataId: function () {
@@ -58,7 +58,7 @@ $scope.Id = $stateParams.Id
 	
 	
 	$scope.formData = $scope.Id == 0 ? { news_date:new Date() } : $scope.getById();
-	$scope.pageTitle = $scope.Id == 0 ? 'Add News'  : 'Update News' ;
+	$scope.pageTitle = $scope.Id == 0 ? 'Add Festival'  : 'Update Festival' ;
 	
 	
 	$scope.save = function () {

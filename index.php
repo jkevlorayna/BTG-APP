@@ -19,7 +19,7 @@ if(!isset($_SESSION['isAuthenticated'])){ $isAuthenticated = false; }else{ $isAu
 					<li><a href="#/place/list"><i class="fa fa-table"></i>  Places</a></li>
 					<li><a href="#/guest/list"><i class="fa fa-table"></i>  Guest List</a></li>
 					<li><a href="#/event/list"><i class="fa fa-table"></i>  Events</a></li>
-					<li><a href="#/news/list"><i class="fa fa-table"></i>  News</a></li>
+					<li><a href="#/news/list"><i class="fa fa-table"></i>  Festival</a></li>
 					<li><a href="#/page/list"><i class="fa fa-table"></i>  Pages</a></li>
 					<li><a href="#/user/list"><i class="fa fa-group"></i> User List</a></li>
 					<li><a href="#/category"><i class="fa fa-table"></i> Category</a></li>
@@ -60,7 +60,7 @@ if(!isset($_SESSION['isAuthenticated'])){ $isAuthenticated = false; }else{ $isAu
             </ul>
           </li>
         </ul>	
-			<h3><i class="fa fa-gears"></i> Negros Island Travel Guide Administrator</h3>
+			<h3><i class="fa fa-gears"></i> Bacolod Travel Guide</h3>
       </div>
     </div>
   </div>
